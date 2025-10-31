@@ -1,0 +1,6 @@
+// Rust template, or use container API for other languages
+agent {
+  name = "SelfUpdater"
+  model { "gpt-4o" }
+  prompt { "Summarize the latest technology news:" }
+}.serve(devMode = true)

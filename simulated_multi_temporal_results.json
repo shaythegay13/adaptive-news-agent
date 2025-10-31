@@ -1,0 +1,447 @@
+{
+  "periods": {
+    "recent": {
+      "period": "recent",
+      "period_name": "Recent (Now - 6 months)",
+      "article_count": 20,
+      "topics": {
+        "AI/ML": 17,
+        "Mobile": 2,
+        "Software": 1,
+        "Apple": 3,
+        "Cloud": 3,
+        "Quantum": 1,
+        "Social Media": 1,
+        "Security": 2,
+        "VR/AR": 9,
+        "Tesla": 1,
+        "Hardware": 1,
+        "Gaming": 1
+      },
+      "top_topics": [
+        [
+          "AI/ML",
+          17
+        ],
+        [
+          "VR/AR",
+          9
+        ],
+        [
+          "Apple",
+          3
+        ],
+        [
+          "Cloud",
+          3
+        ],
+        [
+          "Mobile",
+          2
+        ]
+      ],
+      "sources": {
+        "TechCrunch": 1,
+        "MIT Tech Review": 1,
+        "Apple": 1,
+        "IBM Research": 1,
+        "Pew Research": 1
+      },
+      "sample_articles": [
+        {
+          "title": "GPT-5 Rumors Suggest AGI Breakthrough",
+          "description": "OpenAI hints at next-generation model",
+          "source": "TechCrunch"
+        },
+        {
+          "title": "AI Agents Automate Complex Business Tasks",
+          "description": "New tools manage workflows autonomously",
+          "source": "MIT Tech Review"
+        },
+        {
+          "title": "Apple Intelligence Integrates AI Across iOS",
+          "description": "On-device AI features debut with iPhone 16",
+          "source": "Apple"
+        },
+        {
+          "title": "Quantum Computing Reaches Commercial Viability",
+          "description": "IBM offers quantum cloud services",
+          "source": "IBM Research"
+        },
+        {
+          "title": "AI-Generated Content Dominates Social Media",
+          "description": "40% of posts now AI-created",
+          "source": "Pew Research"
+        },
+        {
+          "title": "Security AI Detects Threats Proactively",
+          "description": "Machine learning prevents 95% of attacks",
+          "source": "CrowdStrike"
+        },
+        {
+          "title": "Humanoid Robots Enter Consumer Market",
+          "description": "Tesla, Boston Dynamics ship first units",
+          "source": "IEEE Spectrum"
+        },
+        {
+          "title": "AI Chip Market Explodes to $100B Annually",
+          "description": "Nvidia dominates but faces new competition",
+          "source": "Bloomberg"
+        },
+        {
+          "title": "Brain-Computer Interfaces Show Promise",
+          "description": "Neuralink begins human trials",
+          "source": "Nature Medicine"
+        },
+        {
+          "title": "AI Regulation Bills Pass in EU and US",
+          "description": "New laws govern AI development",
+          "source": "Politico"
+        }
+      ]
+    },
+    "mid_term": {
+      "period": "mid_term",
+      "period_name": "Mid-term (6 months - 1 year)",
+      "article_count": 20,
+      "topics": {
+        "AI/ML": 10,
+        "VR/AR": 10,
+        "Mobile": 3,
+        "Software": 2,
+        "Apple": 2,
+        "Google": 2,
+        "Blockchain": 2,
+        "Quantum": 1,
+        "Tesla": 1,
+        "Microsoft": 1,
+        "Social Media": 1,
+        "Cloud": 1,
+        "Security": 2,
+        "Hardware": 2,
+        "Gaming": 2,
+        "5G": 1,
+        "Startup": 1
+      },
+      "top_topics": [
+        [
+          "AI/ML",
+          10
+        ],
+        [
+          "VR/AR",
+          10
+        ],
+        [
+          "Mobile",
+          3
+        ],
+        [
+          "Software",
+          2
+        ],
+        [
+          "Apple",
+          2
+        ]
+      ],
+      "sources": {
+        "IDC": 2,
+        "OpenAI": 1,
+        "Apple": 1,
+        "Google DeepMind": 1,
+        "Financial Times": 1
+      },
+      "sample_articles": [
+        {
+          "title": "GPT-4 Surpasses Human Performance on Bar Exam",
+          "description": "AI achieves 90th percentile",
+          "source": "OpenAI"
+        },
+        {
+          "title": "Apple Vision Pro Launches to Strong Pre-Orders",
+          "description": "Mixed reality headset debuts at $3,499",
+          "source": "Apple"
+        },
+        {
+          "title": "Google Gemini Challenges ChatGPT Dominance",
+          "description": "Multimodal AI model shows promise",
+          "source": "Google DeepMind"
+        },
+        {
+          "title": "Cryptocurrency Regulations Tighten Globally",
+          "description": "SEC cracks down on exchanges",
+          "source": "Financial Times"
+        },
+        {
+          "title": "AI Coding Tools Now Generate 30% of Code",
+          "description": "GitHub reports developer productivity surge",
+          "source": "GitHub"
+        },
+        {
+          "title": "Quantum Computer Achieves Error Correction Milestone",
+          "description": "Google demonstrates practical quantum computing",
+          "source": "Science"
+        },
+        {
+          "title": "Tesla Full Self-Driving Faces Safety Investigation",
+          "description": "NHTSA examines crash data",
+          "source": "Reuters"
+        },
+        {
+          "title": "Microsoft Integrates AI Across Office Suite",
+          "description": "Copilot becomes standard feature",
+          "source": "Microsoft"
+        },
+        {
+          "title": "Social Media Platforms Add AI Content Labels",
+          "description": "New rules combat misinformation",
+          "source": "The Guardian"
+        },
+        {
+          "title": "Amazon Deploys Warehouse Robots at Scale",
+          "description": "Automation reduces human workforce",
+          "source": "WSJ"
+        }
+      ]
+    },
+    "long_term": {
+      "period": "long_term",
+      "period_name": "Long-term (1 year - 3 years)",
+      "article_count": 20,
+      "topics": {
+        "AI/ML": 7,
+        "Software": 2,
+        "VR/AR": 8,
+        "Blockchain": 3,
+        "Social Media": 2,
+        "Tesla": 2,
+        "Mobile": 1,
+        "Apple": 1,
+        "Gaming": 4,
+        "Microsoft": 2,
+        "Security": 2,
+        "Google": 1,
+        "Other": 1,
+        "Quantum": 1,
+        "5G": 1,
+        "Cloud": 2,
+        "Hardware": 1
+      },
+      "top_topics": [
+        [
+          "VR/AR",
+          8
+        ],
+        [
+          "AI/ML",
+          7
+        ],
+        [
+          "Gaming",
+          4
+        ],
+        [
+          "Blockchain",
+          3
+        ],
+        [
+          "Software",
+          2
+        ]
+      ],
+      "sources": {
+        "TechCrunch": 1,
+        "Bloomberg": 1,
+        "Reuters": 1,
+        "The Verge": 1,
+        "Apple Newsroom": 1
+      },
+      "sample_articles": [
+        {
+          "title": "ChatGPT Launches and Disrupts Tech Industry",
+          "description": "OpenAI releases revolutionary chatbot",
+          "source": "TechCrunch"
+        },
+        {
+          "title": "Cryptocurrency Market Crashes After FTX Collapse",
+          "description": "Bitcoin drops below $20k",
+          "source": "Bloomberg"
+        },
+        {
+          "title": "Twitter Acquired by Elon Musk for $44 Billion",
+          "description": "Social media platform undergoes major changes",
+          "source": "Reuters"
+        },
+        {
+          "title": "Meta Invests Billions in Metaverse Development",
+          "description": "Zuckerberg bets on VR future",
+          "source": "The Verge"
+        },
+        {
+          "title": "Apple Releases iPhone 14 with Satellite Features",
+          "description": "Emergency SOS via satellite debuts",
+          "source": "Apple Newsroom"
+        },
+        {
+          "title": "Microsoft Activision Deal Faces Regulatory Scrutiny",
+          "description": "$69B gaming acquisition challenged",
+          "source": "WSJ"
+        },
+        {
+          "title": "NFT Market Peaks Then Crashes",
+          "description": "Digital art sales plummet 90%",
+          "source": "CoinDesk"
+        },
+        {
+          "title": "Tesla Cybertruck Production Delayed Again",
+          "description": "Electric pickup faces manufacturing challenges",
+          "source": "Automotive News"
+        },
+        {
+          "title": "Google Launches Bard AI to Compete with ChatGPT",
+          "description": "Search giant enters AI race",
+          "source": "Google Blog"
+        },
+        {
+          "title": "Web3 Gaming Promises Revolutionize Industry",
+          "description": "Blockchain games attract investment",
+          "source": "VentureBeat"
+        }
+      ]
+    }
+  },
+  "comparative_analysis": {
+    "topic_evolution": {
+      "Blockchain": {
+        "long_term": 3,
+        "mid_term": 2,
+        "recent": 0,
+        "trend": "declining"
+      },
+      "Startup": {
+        "long_term": 0,
+        "mid_term": 1,
+        "recent": 0,
+        "trend": "stable"
+      },
+      "Cloud": {
+        "long_term": 2,
+        "mid_term": 1,
+        "recent": 3,
+        "trend": "increasing"
+      },
+      "Mobile": {
+        "long_term": 1,
+        "mid_term": 3,
+        "recent": 2,
+        "trend": "increasing"
+      },
+      "Quantum": {
+        "long_term": 1,
+        "mid_term": 1,
+        "recent": 1,
+        "trend": "stable"
+      },
+      "Microsoft": {
+        "long_term": 2,
+        "mid_term": 1,
+        "recent": 0,
+        "trend": "declining"
+      },
+      "Other": {
+        "long_term": 1,
+        "mid_term": 0,
+        "recent": 0,
+        "trend": "declining"
+      },
+      "Google": {
+        "long_term": 1,
+        "mid_term": 2,
+        "recent": 0,
+        "trend": "declining"
+      },
+      "AI/ML": {
+        "long_term": 7,
+        "mid_term": 10,
+        "recent": 17,
+        "trend": "dramatic_increase"
+      },
+      "Gaming": {
+        "long_term": 4,
+        "mid_term": 2,
+        "recent": 1,
+        "trend": "dramatic_decrease"
+      },
+      "Software": {
+        "long_term": 2,
+        "mid_term": 2,
+        "recent": 1,
+        "trend": "decreasing"
+      },
+      "Security": {
+        "long_term": 2,
+        "mid_term": 2,
+        "recent": 2,
+        "trend": "stable"
+      },
+      "Apple": {
+        "long_term": 1,
+        "mid_term": 2,
+        "recent": 3,
+        "trend": "dramatic_increase"
+      },
+      "VR/AR": {
+        "long_term": 8,
+        "mid_term": 10,
+        "recent": 9,
+        "trend": "increasing"
+      },
+      "Hardware": {
+        "long_term": 1,
+        "mid_term": 2,
+        "recent": 1,
+        "trend": "stable"
+      },
+      "5G": {
+        "long_term": 1,
+        "mid_term": 1,
+        "recent": 0,
+        "trend": "declining"
+      },
+      "Social Media": {
+        "long_term": 2,
+        "mid_term": 1,
+        "recent": 1,
+        "trend": "decreasing"
+      },
+      "Tesla": {
+        "long_term": 2,
+        "mid_term": 1,
+        "recent": 1,
+        "trend": "decreasing"
+      }
+    },
+    "emerging_topics": [],
+    "declining_topics": [
+      "Blockchain",
+      "Microsoft",
+      "Other",
+      "Google",
+      "5G"
+    ],
+    "stable_topics": [
+      "Startup",
+      "Quantum",
+      "Security",
+      "Hardware"
+    ],
+    "dramatic_changes": [
+      "AI/ML (\u2191\u2191)",
+      "Gaming (\u2193\u2193)",
+      "Apple (\u2191\u2191)"
+    ]
+  },
+  "ai_insights": "### Comparative Analysis of Multi-Temporal Technology News\n\n#### 1. Emerged or Declined Topics\n\n**Emerged Topics:**\n- **AI/ML:** There has been a significant and sustained rise in interest in Artificial Intelligence (AI) and Machine Learning (ML) across all time periods. This is indicative of ongoing advancements and applications in these domains, particularly as they intersect with other technologies.\n- **Apple:** Interest in Apple has notably increased in the mid-term and recent periods, suggesting heightened consumer engagement or significant product launches. \n\n**Declined Topics:**\n- **Blockchain:** Articles discussing blockchain technology have sharply declined from the long-term to the mid-term and recent periods. This decline could signify a saturation in the market or a shift in focus toward more immediately impactful technologies.\n- **Gaming:** After a notable presence in the long-term period, gaming has seen a significant decline in coverage, possibly due to market stabilization following the pandemic-driven surge.\n\n#### 2. Major Shifts in Technology Focus\n\n- The **AI/ML** sector has experienced a dramatic increase in coverage, indicating a growing recognition of its potential across various industries, including healthcare, finance, and autonomous systems. \n- **VR/AR** has maintained a steady interest, suggesting ongoing investments and developments in immersive technologies, although not reaching the explosive growth seen in AI/ML.\n- **Mobile technology** has regained traction, reflecting the ongoing evolution of smartphones and mobile applications, particularly in relation to AI and cloud integration.\n- **Cloud computing** has emerged as a more prominent topic recently, highlighting its importance in supporting remote work and data storage needs.\n\n#### 3. Patterns that Reveal Industry Direction\n\nThe data reveals several key patterns:\n- **Convergence of Technologies:** The overlap of AI/ML with mobile and cloud technologies suggests a trend towards integrated solutions where AI capabilities enhance mobile applications and cloud services.\n- **Consumer Tech Focus:** The increased coverage of Apple indicates a consumer-centric shift, possibly fueled by new product releases or innovations in user experience that resonate well with consumers.\n- **Stability in VR/AR:** The consistent interest in VR/AR suggests that while it may not be dominating the spotlight, it is steadily maturing, likely finding its place in niche markets like education, training, and remote collaboration.\n\n#### 4. Predictions Based on Trends\n\n- **Continued Dominance of AI/ML:** The growth trajectory of AI/ML will likely continue, with advancements in generative AI, natural language processing, and automation technologies driving innovation across sectors. Companies that leverage AI effectively may gain a competitive edge.\n- **Revival of Blockchain in New Contexts:** While blockchain coverage has declined, it may experience a renaissance as new use cases emerge, particularly in decentralized finance (DeFi) and digital identity verification, as these areas gain more traction.\n- **Focus on Experience and Integration:** Companies will increasingly prioritize user experience and integration of services. This may lead to more holistic technology platforms that incorporate AI, cloud, and mobile capabilities into seamless solutions.\n- **Growth in Immersive Technologies:** VR/AR will likely see renewed interest as applications expand into areas like remote work, virtual events, and interactive experiences, driven by advances in hardware and software.\n\nIn summary, the tech industry's direction appears to be leaning heavily towards AI/ML integration, with ongoing engagement in mobile and cloud technologies. While certain topics like blockchain and gaming are experiencing declines, the overall landscape is evolving to adapt to consumer needs and technological advancements.",
+  "generated_at": "2025-10-30T20:15:34.816715"
+}

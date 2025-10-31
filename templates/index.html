@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptive News Agent - Learning Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+        }
+        
+        .controls {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-weight: 600;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .reset-btn {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        @media (max-width: 968px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .panel {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .panel h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .knowledge-vector {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .stat {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .stat:last-child {
+            border-bottom: none;
+        }
+        
+        .stat-label {
+            font-weight: 600;
+            color: #555;
+        }
+        
+        .stat-value {
+            color: #667eea;
+            font-weight: 700;
+        }
+        
+        .topic-coverage {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .topic {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .iteration {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+        
+        .iteration:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .iteration-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .iteration-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+        
+        .update-badge {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        .iteration-meta {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        
+        .summary-text {
+            color: #333;
+            line-height: 1.8;
+            white-space: pre-wrap;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #667eea;
+        }
+        
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #999;
+        }
+        
+        .empty-state-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+        
+        .history-panel {
+            grid-column: 1 / -1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 Adaptive News Agent</h1>
+            <p class="subtitle">Watch the AI learn and adapt as it encounters more news articles</p>
+        </div>
+        
+        <div class="controls">
+            <button id="fetchBtn" onclick="fetchNews()">📰 Fetch & Analyze News</button>
+            <button id="resetBtn" class="reset-btn" onclick="resetAgent()">🔄 Reset Agent</button>
+        </div>
+        
+        <div class="main-content">
+            <div class="panel">
+                <h2>📊 Knowledge Vector</h2>
+                <div id="knowledgeVector">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">🧠</div>
+                        <p>No knowledge acquired yet. Click "Fetch & Analyze News" to start!</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="panel">
+                <h2>📈 Current Summary</h2>
+                <div id="currentSummary">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">📝</div>
+                        <p>Waiting for initial analysis...</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="panel history-panel">
+                <h2>📚 Learning History</h2>
+                <div id="history">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">🕐</div>
+                        <p>No history yet. The agent will build knowledge over multiple iterations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let isLoading = false;
+        
+        async function fetchNews() {
+            if (isLoading) return;
+            
+            isLoading = true;
+            const btn = document.getElementById('fetchBtn');
+            btn.disabled = true;
+            btn.textContent = '⏳ Analyzing...';
+            
+            try {
+                const response = await fetch('/api/fetch', {
+                    method: 'POST'
+                });
+                const data = await response.json();
+                
+                if (data.success) {
+                    updateKnowledgeVector(data.knowledge_vector);
+                    updateCurrentSummary(data.summary);
+                    updateHistory(data.history);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Failed to fetch news: ' + error.message);
+            } finally {
+                isLoading = false;
+                btn.disabled = false;
+                btn.textContent = '📰 Fetch & Analyze News';
+            }
+        }
+        
+        async function resetAgent() {
+            if (!confirm('Are you sure you want to reset the agent? All learning history will be lost.')) {
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/reset', {
+                    method: 'POST'
+                });
+                const data = await response.json();
+                
+                if (data.success) {
+                    location.reload();
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Failed to reset agent: ' + error.message);
+            }
+        }
+        
+        function updateKnowledgeVector(vector) {
+            const container = document.getElementById('knowledgeVector');
+            
+            let topicsHtml = '';
+            for (const [topic, count] of Object.entries(vector.coverage_topics)) {
+                topicsHtml += `<div class="topic"><strong>${topic}</strong><br>${count} articles</div>`;
+            }
+            
+            container.innerHTML = `
+                <div class="knowledge-vector">
+                    <div class="stat">
+                        <span class="stat-label">Total Articles</span>
+                        <span class="stat-value">${vector.total_articles}</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Iterations</span>
+                        <span class="stat-value">${vector.iterations}</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Summaries Generated</span>
+                        <span class="stat-value">${vector.summaries_count}</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Learning Rate</span>
+                        <span class="stat-value">${vector.learning_rate.toFixed(2)} articles/iteration</span>
+                    </div>
+                </div>
+                <h3 style="margin: 20px 0 10px 0; color: #667eea;">Topic Coverage</h3>
+                <div class="topic-coverage">
+                    ${topicsHtml}
+                </div>
+            `;
+        }
+        
+        function updateCurrentSummary(summary) {
+            const container = document.getElementById('currentSummary');
+            
+            const badge = summary.is_update 
+                ? '<span class="iteration-badge update-badge">UPDATE</span>'
+                : '<span class="iteration-badge">INITIAL</span>';
+            
+            container.innerHTML = `
+                <div class="iteration">
+                    <div class="iteration-header">
+                        <h3>Iteration ${summary.iteration}</h3>
+                        ${badge}
+                    </div>
+                    <div class="iteration-meta">
+                        📰 ${summary.new_articles_count} new articles | 
+                        📚 ${summary.total_knowledge} total articles | 
+                        ⏰ ${new Date(summary.timestamp).toLocaleString()}
+                    </div>
+                    <div class="summary-text">${summary.summary}</div>
+                </div>
+            `;
+        }
+        
+        function updateHistory(history) {
+            const container = document.getElementById('history');
+            
+            if (history.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-state-icon">🕐</div>
+                        <p>No history yet.</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            let historyHtml = '';
+            for (let i = history.length - 1; i >= 0; i--) {
+                const summary = history[i];
+                const badge = summary.is_update 
+                    ? '<span class="iteration-badge update-badge">UPDATE</span>'
+                    : '<span class="iteration-badge">INITIAL</span>';
+                
+                historyHtml += `
+                    <div class="iteration">
+                        <div class="iteration-header">
+                            <h3>Iteration ${summary.iteration}</h3>
+                            ${badge}
+                        </div>
+                        <div class="iteration-meta">
+                            📰 ${summary.new_articles_count} new articles | 
+                            📚 ${summary.total_knowledge} total articles | 
+                            ⏰ ${new Date(summary.timestamp).toLocaleString()}
+                        </div>
+                        <div class="summary-text">${summary.summary}</div>
+                    </div>
+                `;
+            }
+            
+            container.innerHTML = historyHtml;
+        }
+        
+        // Load initial status
+        async function loadStatus() {
+            try {
+                const response = await fetch('/api/status');
+                const data = await response.json();
+                
+                if (data.history.length > 0) {
+                    updateKnowledgeVector(data.knowledge_vector);
+                    updateCurrentSummary(data.history[data.history.length - 1]);
+                    updateHistory(data.history);
+                }
+            } catch (error) {
+                console.error('Error loading status:', error);
+            }
+        }
+        
+        // Load status on page load
+        loadStatus();
+    </script>
+</body>
+</html>
