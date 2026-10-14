@@ -12,4 +12,13 @@ echo ""
 echo "This will fetch real historical data and show trend evolution!"
 echo ""
 
-./venv/bin/python multi_temporal_agent.py
+cd "$(dirname "$0")"
+if [ -x "./venv/bin/python" ]; then
+  PYTHON="./venv/bin/python"
+elif command -v python3 >/dev/null 2>&1; then
+  PYTHON="python3"
+else
+  PYTHON="python"
+fi
+
+"$PYTHON" multi_temporal_agent.py

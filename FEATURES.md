@@ -1,5 +1,7 @@
 # Adaptive News Agent Features
 
+> Earlier hackathon note. The [README](README.md) describes the behavior in the current code. This page mentions pie charts and stored confidence scores; the web page renders topic cards, and confidence is not a saved field.
+
 ## 🎯 What Makes This Demo Special
 
 This isn't just a news summarizer—it's a demonstration of **progressive AI learning** that shows:

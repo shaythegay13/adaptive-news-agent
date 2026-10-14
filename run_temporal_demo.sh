@@ -13,4 +13,13 @@ echo "Running $ITERATIONS iterations with ${DELAY}s intervals"
 echo "This version tracks how topics evolve and learns patterns!"
 echo ""
 
-./venv/bin/python temporal_news_agent.py $ITERATIONS $DELAY
+cd "$(dirname "$0")"
+if [ -x "./venv/bin/python" ]; then
+  PYTHON="./venv/bin/python"
+elif command -v python3 >/dev/null 2>&1; then
+  PYTHON="python3"
+else
+  PYTHON="python"
+fi
+
+"$PYTHON" temporal_news_agent.py "$ITERATIONS" "$DELAY"
