@@ -1,5 +1,7 @@
 # Adaptive News Agent Demo
 
+> Earlier hackathon note. The [README](README.md) describes the behavior in the current code. Examples on this page, including stored confidence scores, are promotional and are not fields the program saves.
+
 This demo showcases an AI agent that learns and adapts its summaries as it encounters more news articles over time.
 
 ## Features

@@ -1,5 +1,7 @@
 # Arc Agent Project
 
+> Earlier note kept for the Eclipse LMOS Arc stub. Setup for the news demos is in the [README](README.md).
+
 This project uses the Eclipse LMOS Arc framework for building AI agents.
 
 ## 🎯 Featured Demo: Adaptive News Agent
@@ -39,10 +41,10 @@ atlas SelfUpdater.agent
 
 ## Dependencies
 
-- `arc-agents:0.185`: Core Arc agents library
-- `arc-server:0.185`: Arc server implementation
+- `arc-agents:0.185.0`: Core Arc agents library
+- `arc-server:0.185.0`: Arc server implementation
 
 ## Requirements
 
-- Java 17 or higher
-- Kotlin 1.9.22
+- Java 21 (required by Arc 0.185.0)
+- Kotlin 2.1.21 (Arc 0.185.0 metadata is Kotlin 2.1)

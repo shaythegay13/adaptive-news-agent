@@ -24,7 +24,7 @@ class MultiTemporalAgent:
     """Agent that analyzes and compares news across multiple time periods."""
     
     def __init__(self):
-        self.news_api_key = os.getenv("NEWS_API_KEY", "a798667e31184322bdd5a220a6730c12")
+        self.news_api_key = os.getenv("NEWS_API_KEY")
         self.openai_key = os.getenv("OPENAI_API_KEY")
         self.client = OpenAI(api_key=self.openai_key) if OPENAI_AVAILABLE and self.openai_key else None
         
@@ -50,6 +50,10 @@ class MultiTemporalAgent:
         from_str = from_date.strftime("%Y-%m-%d")
         
         print(f"  📅 Fetching from {from_str} to {to_str}...")
+
+        if not self.news_api_key:
+            print("  NEWS_API_KEY is not set; skipping live fetch.")
+            return []
         
         try:
             url = f"https://newsapi.org/v2/everything"
@@ -85,8 +89,8 @@ class MultiTemporalAgent:
                 print(f"  ⚠️  API returned status {response.status_code}")
                 return []
                 
-        except Exception as e:
-            print(f"  ❌ Error fetching news: {str(e)}")
+        except (requests.RequestException, ValueError):
+            print("  ❌ Error fetching news.")
             return []
     
     def analyze_period(self, period_key: str, articles: List[Dict]) -> Dict[str, Any]:

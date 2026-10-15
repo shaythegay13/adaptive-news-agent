@@ -1,5 +1,7 @@
 # Quick Start Guide
 
+> Earlier hackathon note. Use the [README](README.md) for setup. There is no default NewsAPI key in the source.
+
 ## ✅ You're All Set! Here's What You Can Do:
 
 ### 1. 🖥️ Run the CLI Demo (Recommended First)
